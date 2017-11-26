@@ -1,0 +1,19 @@
+
+
+<ion-view view-title="">
+
+	<ion-content has-bouncing="false" class="gray-back">
+
+		<div class="h-hotel-wrapper" ng-repeat="hotel in HOTELS" ng-click="onTapHotel($index)">
+			<div class="h-hotel-image" ng-style="{'background-image': 'url('+hotel.image+')'}"></div>
+			<div class="h-hotel-item">
+				<div class="h-hotel-caption center-align">{{hotel.name}}</div>
+				<i class="h-hotel-map ion-android-map button-smooth" ng-click="onTapMap($index, $event)"></i>
+				<div class="h-tags-wrapper">
+					<div class="h-hotel-address">{{hotel.address}}</div>
+					<div class="h-hotel-price">From: <span>R{{getHotelPrice(hotel)}}/pp</span></div>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

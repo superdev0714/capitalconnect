@@ -1,0 +1,33 @@
+
+
+<ion-modal-view ng-controller="PaymentCtrl" class="payment-dialog">
+
+	<ion-header-bar class="bar-dark">
+		<div class="buttons">
+			<a class="button button-icon button-clear ion-ios-close-empty a-btn-close" ng-click="onClose()"></a>
+		</div>
+	</ion-header-bar>
+
+	<ion-content class="dark-back" has-bouncing="false">
+		<div class="dialog-main" style="padding-top: 1em;">
+			<div class="p-payment-logo-wrapper">
+				<div class="p-payment-logo center-align"></div>
+			</div>
+			<div class="p-payment-caption">Payment</div>
+			<div class="p-cards-section">
+				<div class="p-card-item" ng-repeat="card in PAYMENTS track by $index" ng-show="PAYMENTS.length">
+					<div class="p-card-icon"><i class="ion-card"></i></div>
+					<div class="p-card-number">**** {{card.last_digits}}</div>
+					<div class="p-remove-card button-smooth" ng-click="onRemoveCard($index)">Remove</div>
+				</div>
+				<div class="p-no-cards-msg" ng-hide="PAYMENTS.length">
+					You have no cards linked to your account yet. Please add one.
+				</div>
+			</div>
+		</div>
+		<div class="dialog-footer">
+			<div class="button button-assertive sticky-footer-button" ng-click="onAddCard()">Add New Card</div>
+		</div>
+	</ion-content>
+
+</ion-modal-view>

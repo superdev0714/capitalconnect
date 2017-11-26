@@ -1,0 +1,26 @@
+
+
+<ion-view class="si-view-back" view-title="">
+
+	<ion-content class="fixed-back" has-bouncing="false">
+		<div class="si-main">
+			<div class="si-overlay"></div>
+			<div class="welcome-logo vert-align-33 hide-on-keyboard-open"></div>
+			<div class="lower-field si-lower-field animate-panel" ng-if="phase == 0">
+				<input class="input-field-clean" type="text" ng-model="REG_DATA.first_name" placeholder="First Name" return-close="true" autocorrect="off">
+				<input class="input-field-clean" type="text" ng-model="REG_DATA.last_name" placeholder="Last Name" return-close="true" autocorrect="off">
+			</div>
+			<div class="lower-field r-lower-field animate-panel r-shrink-panel" ng-if="phase == 1">
+				<input class="input-field-clean" type="email" ng-model="REG_DATA.email" placeholder="Email" return-close="true">
+				<input class="input-field-clean" type="tel" ng-model="REG_DATA.mobile" placeholder="Mobile Number" return-close="true">
+				<input class="input-field-clean" type="password" ng-model="REG_DATA.password" placeholder="Password" return-close="true">
+				<input class="input-field-clean" type="password" ng-model="REG_DATA.confirm_pwd" placeholder="Confirm Password" return-close="true">
+			</div>
+		</div>
+		<div class="si-footer">
+			<div class="button button-dark si-button" ng-click="onBack()">Back</div>
+			<div class="button button-assertive si-button" ng-click="onNext()" style="right: 0px;">{{getNextCaption()}}</div>
+		</div>
+	</ion-content>
+
+</ion-view>

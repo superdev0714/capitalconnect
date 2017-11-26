@@ -1,0 +1,20 @@
+
+
+.cion-r-facility{
+	height: 1em;
+}
+
+.cion-rd-facility{
+	max-width: 2em;
+	max-height: 2em;
+	float: left;
+}
+
+@media (max-width: 350px) {
+
+/*	.cion-rd-facility{
+		max-width: 1.8em;
+		max-height: 1.8em;
+		float: left;
+	}*/
+}

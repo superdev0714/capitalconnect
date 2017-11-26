@@ -1,0 +1,46 @@
+
+<ion-side-menus enable-menu-with-back-views="false">
+
+	<ion-side-menu-content>
+		<ion-nav-bar class="bar-dark">
+			<ion-nav-back-button>
+			</ion-nav-back-button>
+			<ion-nav-buttons side="left">
+				<button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+				</button>
+			</ion-nav-buttons>
+		</ion-nav-bar>
+		<ion-nav-view name="menuContent"></ion-nav-view>
+	</ion-side-menu-content>
+
+	<ion-side-menu side="left">
+		<ion-content class="side-menu-content" has-bouncing="false" scroll="false">
+			<div class="menu-upper">
+				<div class="side-menu-header"></div>
+				<ion-list>
+					<ion-item menu-close ng-click="onAccount()">
+						{{ACCOUNT_DATA.first_name}} {{ACCOUNT_DATA.last_name}}
+					</ion-item>
+					<ion-item menu-close ng-click="onBookings()">
+						My Bookings
+					</ion-item>
+					<ion-item menu-close ng-click="onPayment()">
+						Payment
+					</ion-item>
+					<ion-item menu-close ng-click="onTaC()">
+						Terms & Conditions
+					</ion-item>
+					<ion-item menu-close ng-click="onHelp()">
+						Help
+					</ion-item>
+				</ion-list>
+			</div>
+			<div class="menu-footer">
+				<div class="side-menu-sign-out" ng-click="onSignOut()">
+					Sign Out
+				</div>
+			</div>
+		</ion-content>
+	</ion-side-menu>
+	
+</ion-side-menus>

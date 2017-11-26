@@ -1,0 +1,40 @@
+
+
+<ion-view view-title="">
+
+	<ion-content has-bouncing="false" class="white-back sticky-back">
+
+		<div class="rd-detail-main">
+			<div class="hotel-header">
+				<div class="hotel-header-image" ng-style="{'background-image': 'url('+CUR_BOOKING_DATA.coverImage+')'}"></div>
+				<div class="hotel-header-caption">Staying at</div>
+				<div class="hotel-header-name">{{CUR_BOOKING_DATA.name}}</div>
+				<div class="hotel-header-caption" style="padding-top: .2em;">{{getDurationText()}}</div>
+				<div class="hotel-header-address">{{CUR_BOOKING_DATA.address}}</div>
+			</div>
+
+			<div class="rd-room-name">{{CUR_BOOKING_DATA.roomDetails.name}}</div>
+			<div class="rd-facilities-wrapper">
+				<div class="row" ng-repeat="facils in facilities">
+					<div class="col-48">
+						<i class="cion-rd-facility" ng-style="{'content': 'url('+facils[0].fileUrl+')'}"></i>
+						<div>{{facils[0].name}}</div>
+					</div>
+					<div class="col-4"></div>
+					<div class="col-48" ng-show="facils[1].id != null">
+						<i class="cion-rd-facility" ng-style="{'content': 'url('+facils[1].fileUrl+')'}"></i>
+						<div>{{facils[1].name}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="rd-detail-footer">
+			<input class="input-field-clean rd-input-voucher" type="text" ng-model="voucher.voucherCode" placeholder="Corporate, Discount or Travel Agent Code" return-close="true" autocorrect="off" autocapitalize="off">
+			<div class="rd-total-due-wrapper">
+				<div class="rd-total-due vert-align">Total Due: R{{CUR_BOOKING_DATA.roomDetails.price}} ZAR</div>
+			</div>
+			<div class="button button-assertive rd-btn-book" ng-click="onBook()">Book & Pay Now With Credit Card</div>
+		</div>
+
+	</ion-content>
+</ion-view>

@@ -1,0 +1,49 @@
+
+
+<ion-view view-title="">
+
+	<ion-content has-bouncing="false" class="gray-back sticky-back">
+
+		<div class="dialog-main">
+			<div class="hotel-header">
+				<div class="hotel-header-image" ng-style="{'background-image': 'url('+CUR_BOOKING_DATA.coverImage+')'}"></div>
+				<div class="hotel-header-caption">Staying at</div>
+				<div class="hotel-header-name">{{CUR_BOOKING_DATA.name}}</div>
+				<div class="hotel-header-address">{{CUR_BOOKING_DATA.address}}</div>
+			</div>
+			<div class="d-dates-caption">When would you like to stay?</div>
+			<div class="d-dates-selector row">
+<!-- 				<div class="col-49">
+					<i class="d-year-dec ion-ios-arrow-left button-smooth" ng-click="onDecYear()"></i>
+					<div class="d-year-name">{{curYear}}</div>
+					<i class="d-year-inc ion-ios-arrow-right button-smooth" ng-click="onIncYear()"></i>
+				</div>
+				<div class="col-2"></div>
+				<div class="col-49">
+					<i class="d-month-dec ion-ios-arrow-left button-smooth" ng-click="onDecMonth()"></i>
+					<div class="d-month-name">{{monthNames[curMonth]}}</div>
+					<i class="d-month-inc ion-ios-arrow-right button-smooth" ng-click="onIncMonth()"></i>
+				</div> -->
+				<div class="col">
+					<i class="d-month-dec ion-ios-arrow-left button-smooth" ng-click="onDecMonth()"></i>
+					<div class="d-month-name">{{monthNames[curMonth]}}&nbsp&nbsp{{curYear}}</div>
+					<i class="d-month-inc ion-ios-arrow-right button-smooth" ng-click="onIncMonth()"></i>
+				</div>
+			</div>
+			<div class="d-calendar-wrapper">
+				<div class="row d-weekday-row">
+					<div class="col" ng-repeat="weekday in weekdayNames">{{weekday}}</div>
+				</div>
+				<div class="row d-calendar-row" ng-repeat="row in CALENDAR" on-swipe-right="onDecMonth()" on-swipe-left="onIncMonth()">
+					<div class="col" ng-repeat="day in row" ng-click="onTapCell($parent.$index, $index)">
+						<div class="center-align" ng-class="getCellClass(day)">{{day.date}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="dialog-footer">
+			<div class="button button-assertive sticky-footer-button" ng-click="onNext()">Next</div>
+		</div>
+
+	</ion-content>
+</ion-view>

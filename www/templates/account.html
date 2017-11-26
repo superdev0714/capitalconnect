@@ -1,0 +1,32 @@
+
+
+<ion-modal-view ng-controller="AccountCtrl" class="account-dialog">
+
+	<ion-header-bar class="bar-dark">
+		<div class="buttons">
+			<a class="button button-icon button-clear ion-ios-close-empty a-btn-close" ng-click="onClose()"></a>
+		</div>
+	</ion-header-bar>
+
+	<ion-content class="dark-back" has-bouncing="false">
+		<div class="dialog-main">
+			<div class="a-avatar-wrapper">
+				<div class="a-avatar button-smooth center-align" ng-style="{'background-image':'url(' + temp.photo + ')'}" ng-click="onTakePhoto($event)"></div>
+			</div>
+			<div class="a-lbl-name">{{ACCOUNT_DATA.firstName}} {{ACCOUNT_DATA.lastName}}</div>
+			<div class="a-edit-account button-smooth" ng-click="onPayment()">
+				Edit Payment
+			</div>
+			<div class="a-input-group">
+				<input class="input-field-clean" type="text" ng-model="temp.first_name" placeholder="First Name" ng-change="onChange()" return-close="true" autocorrect="off" autocapitalize="on">
+				<input class="input-field-clean" type="text" ng-model="temp.last_name" placeholder="Last Name" ng-change="onChange()" return-close="true" autocorrect="off" autocapitalize="on">
+				<input class="input-field-clean" type="email" ng-model="temp.email" placeholder="Email Address" ng-change="onChange()" return-close="true">
+				<input class="input-field-clean" type="tel" ng-model="temp.mobile" placeholder="Mobile Number" ng-change="onChange()" return-close="true">
+			</div>
+		</div>
+		<div class="dialog-footer">
+			<div class="button button-assertive sticky-footer-button" ng-click="onDone()">Done</div>
+		</div>
+	</ion-content>
+
+</ion-modal-view>

@@ -1,0 +1,29 @@
+
+
+<ion-view view-title="" can-swipe-back="false">
+
+	<ion-content has-bouncing="false" class="gray-back sticky-back">
+
+		<div class="dialog-main">
+			<div class="hotel-header">
+				<div class="hotel-header-image" ng-style="{'background-image': 'url('+CUR_BOOKING_DATA.coverImage+')'}"></div>
+				<div class="hotel-header-caption">Staying at</div>
+				<div class="hotel-header-name">{{CUR_BOOKING_DATA.name}}</div>
+				<div class="hotel-header-address">{{CUR_BOOKING_DATA.address}}</div>
+			</div>
+			<div class="g-guests-caption">How many people are staying?</div>
+			<md-slider class="g-guests-slider hide-on-keyboard-open" md-discrete="" step="1" ng-model="CUR_BOOKING_DATA.guests" min="{{CUR_BOOKING_DATA.guests_min}}" max="{{CUR_BOOKING_DATA.guests_max}}" aria-label="guest-slider"></md-slider>
+			<div class="g-input-group">
+				<div class="g-row" ng-repeat="name in guest_names|limitTo:CUR_BOOKING_DATA.guests">
+					<div>G{{$index+1}}</div>
+					<input class="input-field-clean" type="text" ng-model="name.first_name" placeholder="First Name" return-close="true" autocorrect="off" autocapitalize="on">
+					<input class="input-field-clean" type="text" ng-model="name.last_name" placeholder="Last Name" return-close="true" autocorrect="off" autocapitalize="on">
+				</div>
+			</div>
+		</div>
+		<div class="dialog-footer">
+			<div class="button button-assertive sticky-footer-button" ng-click="onNext()">Next</div>
+		</div>
+
+	</ion-content>
+</ion-view>

@@ -1,0 +1,12 @@
+
+
+<ion-modal-view class="photo-dialog zoom-in" ng-controller="RoomsCtrl">
+	<ion-pane class="dark-back" has-bouncing="false">
+
+		<ion-slide-box class="p-photos" show-pager="true" pager-click="onPager(index)" delegate-handle="p-sld-photos">
+			<ion-slide class="p-photos-slide" ng-repeat="photo in curRoomPhotos" ng-style="{'background-image': 'url(' + photo.url + ')'}">
+			</ion-slide>
+		</ion-slide-box>
+
+	</ion-pane>
+</ion-modal-view>

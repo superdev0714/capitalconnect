@@ -1,0 +1,32 @@
+
+
+<ion-view view-title="">
+
+	<ion-content has-bouncing="false" class="gray-back room-back">
+		<div class="mb-main-caption">My Bookings</div>
+		<div class="mb-legends-wrapper" ng-hide="BOOKINGS.length == 0">
+			<div class="mb-legend-item">
+				<div class="mb-legend mb-bk-color-blue"></div>
+				<span class="mb-legend-text">Upcoming</span>
+			</div>
+			<div class="mb-legend-item">
+				<div class="mb-legend mb-bk-color-white"></div>
+				<span class="mb-legend-text">Ongoing</span>
+			</div>
+			<div class="mb-legend-item">
+				<div class="mb-legend mb-bk-color-gray"></div>
+				<span class="mb-legend-text">Expired</span>
+			</div>
+		</div>
+		<div class="mb-bookings-wrapper" ng-hide="BOOKINGS.length == 0">
+			<div class="mb-booking-item" ng-repeat="booking in BOOKINGS | reverse" ng-class="getItemClass(booking.status)">
+				<div class="mb-booking-hotel">The Capital {{booking.hotel_name}}</div>
+				<span class="mb-booking-period">{{booking.period}}</span>
+				<span class="mb-booking-price">{{booking.price}}</span>
+			</div>
+		</div>
+		<div class="mb-lbl-no-bookings" ng-show="BOOKINGS.length == 0">
+			You don't have any reservations yet.
+		</div>
+	</ion-content>
+</ion-view>

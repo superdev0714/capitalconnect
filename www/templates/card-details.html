@@ -1,0 +1,34 @@
+
+
+<ion-modal-view ng-controller="CardDetailsCtrl" class="card-details-dialog">
+
+	<ion-header-bar class="bar-dark">
+		<div class="buttons">
+			<a class="button button-icon button-clear ion-ios-close-empty a-btn-close" ng-click="onClose()"></a>
+		</div>
+	</ion-header-bar>
+
+	<ion-content class="dark-back" has-bouncing="false">
+		<div class="dialog-main">
+			<div class="cd-caption">Add Card</div>
+			<div class="a-input-group">
+				<div class="row" style="padding: 0;">
+					<input class="col-78 input-field-clean" type="tel" ng-model="CARD_DETAILS.number" placeholder="Card Number" return-close="true" maxlength="19">
+					<div class="col-2"></div>
+					<input class="col-20 input-field-clean" type="tel" ng-model="CARD_DETAILS.cvv" placeholder="CVV" return-close="true" maxlength="4">
+				</div>
+				<div class="row" style="padding: 0;">
+					<input class="col-49 input-field-clean" type="tel" ng-model="CARD_DETAILS.exp_month" placeholder="Expiry Month" return-close="true" maxlength="2">
+					<div class="col-2"></div>
+					<input class="col-49 input-field-clean" type="tel" ng-model="CARD_DETAILS.exp_year" placeholder="Expiry Year" return-close="true" maxlength="4">
+				</div>
+				<input class="input-field-clean" type="text" ng-model="CARD_DETAILS.first_name" placeholder="First Name" return-close="true" autocorrect="off" autocapitalize="on">
+				<input class="input-field-clean" type="text" ng-model="CARD_DETAILS.last_name" placeholder="Last Name" return-close="true" autocorrect="off" autocapitalize="on">
+			</div>
+		</div>
+		<div class="dialog-footer">
+			<div class="button button-assertive sticky-footer-button" ng-click="onDone()">Done</div>
+		</div>
+	</ion-content>
+
+</ion-modal-view>

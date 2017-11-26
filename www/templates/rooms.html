@@ -1,0 +1,33 @@
+
+
+<ion-view view-title="">
+
+	<ion-content has-bouncing="false" class="gray-back room-back">
+
+		<div class="hotel-header">
+			<div class="hotel-header-image" ng-style="{'background-image': 'url('+CUR_BOOKING_DATA.coverImage+')'}"></div>
+			<div class="hotel-header-caption">Staying at</div>
+			<div class="hotel-header-name">{{CUR_BOOKING_DATA.name}}</div>
+			<div class="hotel-header-caption" style="padding-top: .2em;">{{getDurationText()}}</div>
+			<div class="hotel-header-address">{{CUR_BOOKING_DATA.address}}</div>
+		</div>
+
+		<div class="r-room-list">
+			<div class="r-room-item" ng-repeat="room in ROOMS">
+				<div class="r-room-thumbnail" ng-style="{'background-image': 'url('+room.thumbnail+')'}" ng-click="onTapRoomPhoto($index)"></div>
+				<div class="r-room-details">
+					<div class="r-room-details-wrapper">
+						<div class="r-room-name">{{room.name}}</div>
+						<div class="r-room-desc" ng-click="onTapRoomDesc($index)">{{room.desc}}</div>
+					</div>
+					<div class="r-room-details-footer">
+						<div class="r-std-room-price">R{{room.stdPrice}}/night (Standard Rate)</div>
+						<div class="r-room-price"><span>Total:&nbsp</span>{{getPriceTag(room)}}</div>
+					</div>
+				</div>
+				<div class="r-btn-book-now" ng-click="onTapRoom($index)">Book Now</div>
+			</div>
+		</div>
+		
+	</ion-content>
+</ion-view>

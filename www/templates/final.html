@@ -1,0 +1,24 @@
+
+
+<ion-view view-title="" can-swipe-back="false" hide-back-button="true">
+
+	<ion-content has-bouncing="false" class="gray-back sticky-back">
+
+		<div class="dialog-main">
+			<div class="hotel-header">
+				<div class="hotel-header-image" ng-style="{'background-image': 'url('+CUR_BOOKING_DATA.coverImage+')'}"></div>
+				<div class="hotel-header-caption">Staying at</div>
+				<div class="hotel-header-name">{{CUR_BOOKING_DATA.name}}</div>
+				<div class="hotel-header-caption" style="padding-top: .2em;">{{getDurationText()}}</div>
+				<div class="hotel-header-address">{{CUR_BOOKING_DATA.address}}</div>
+			</div>
+			<div class="f-final-caption">{{getCaption()}}</div>
+			<div class="f-status-icon" ng-class="getStatusClass()"></div>
+			<div class="f-message">{{getMessage()}}</div>
+		</div>
+		<div class="dialog-footer">
+			<div class="button button-assertive sticky-footer-button" ng-click="onNext()">{{getNextCaption()}}</div>
+		</div>
+
+	</ion-content>
+</ion-view>

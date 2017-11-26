@@ -1,0 +1,14 @@
+
+
+<ion-view view-title="">
+
+	<ion-content has-bouncing="false" class="gray-back">
+
+		<div id="id-h-area-{{$index}}" class="h-area-wrapper" ng-repeat="area in AREAS" ng-click="onTapArea($index)">
+			<div class="h-area-image" ng-style="{'background-image': 'url('+area.image+')'}"></div>
+			<div class="h-area-item">
+				<div class="h-area-caption center-align">{{area.name}}</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

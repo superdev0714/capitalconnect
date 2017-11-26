@@ -1,0 +1,20 @@
+
+
+<ion-view class="si-view-back" view-title="">
+
+	<ion-content class="fixed-back" has-bouncing="false">
+		<div class="si-main">
+			<div class="si-overlay"></div>
+			<div class="welcome-logo vert-align-33 hide-on-keyboard-open-c"></div>
+			<div class="lower-field si-lower-field">
+				<input class="input-field-clean" type="email" ng-model="CRED_DATA.email" placeholder="Email" return-close="true">
+				<input class="input-field-clean" type="password" ng-model="CRED_DATA.password" placeholder="Password" return-close="true">
+			</div>
+		</div>
+		<div class="si-footer">
+			<div class="button button-dark si-button" ng-click="onBack()">Back</div>
+			<div class="button button-assertive si-button" ng-click="onSignIn()" style="right: 0px;">Sign In</div>
+		</div>
+	</ion-content>
+
+</ion-view>
